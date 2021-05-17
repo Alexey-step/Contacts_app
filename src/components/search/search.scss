@@ -1,0 +1,20 @@
+@import '../UI/theme/variable.scss';
+
+.search {
+  position: relative;
+}
+
+.search__field {
+  width: 300px;
+  padding: 7px;
+  border: 1px solid $basic-yellow;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.search__btn {
+  border: none;
+  background-color: $basic-yellow;
+  padding: 8px 20px;
+}

@@ -1,0 +1,14 @@
+@import '../../UI/theme/variable.scss';
+
+.search__item {
+  padding: 10px;
+  border-bottom: 1px solid $basic-yellow;
+  background-color: $basic-white;
+  width: 100%;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    background-color: $basic-grey;
+  }
+}

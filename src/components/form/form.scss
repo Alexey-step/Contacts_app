@@ -1,0 +1,23 @@
+@import '../UI/theme/variable.scss';
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  // border: 1px solid black;
+  // padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form__field {
+  padding: 8px 10px;
+}
+
+.form__btn {
+  border: none;
+  background-color: $basic-yellow;
+  padding: 10px;
+}

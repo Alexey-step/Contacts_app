@@ -1,0 +1,39 @@
+@import '../../UI/theme/variable.scss';
+
+.contact__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact__title {
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.contact__text {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+  align-self: flex-start;
+}
+
+.contact__phone {
+  color: $dark-blue;
+  padding-left: 10px;
+}
+
+.contact__btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.contact__btn {
+  border: 1px solid $dark-blue;
+  background-color: $basic-yellow;
+  padding: 8px 15px;
+  border-radius: 10px;
+}
