@@ -1,13 +1,18 @@
 import React from 'react';
 import ContactsList from './contacts-list/contacts-list';
+import { Contact } from '../../types';
 
 import './contacts.scss';
 
-const Contacts: React.FC = () => {
+interface Props {
+  contacts: Contact[],
+}
+
+const Contacts: React.FC<Props> = ({ contacts }) => {
   return (
     <section className="contacts">
       <h1 className="contacts__title">Contacts</h1>
-      <ContactsList />
+      <ContactsList contacts={contacts} />
     </section>
   );
 };

@@ -1,0 +1,59 @@
+@import "../theme/variable.scss";
+
+.paginate__wrapper {
+  width: 100%;
+  padding: 0 20px;
+  margin: 25px 0;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  outline: none;
+  padding: 0;
+  width: 100%;
+}
+
+.pagination > .active > a{
+  background-color: $dark-blue;
+  border-color: $dark-blue;
+  color: $basic-white;
+}
+
+.pagination > li {
+  margin-bottom: 5px;
+}
+
+.pagination > li > a{
+  display: inline-block;
+  border: 1px solid $dark-blue;
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus{
+  background-color: $dark-blue;
+  border-color: $dark-blue;
+  outline: none ;
+}
+
+.pagination > li > a,
+.pagination > li > span{
+  color: $dark-blue;
+}
+
+.pagination > li:first-child > a,
+.pagination > li:first-child > span,
+.pagination > li:last-child > a,
+.pagination > li:last-child > span{
+  border-radius: unset
+}

@@ -2,11 +2,16 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../store/reducer';
 import ContactsItem from '../contacts-item/contacts-item';
+import { Contact } from '../../../types';
 
 import './contacts-list.scss';
 
-const ContactsList: React.FC = () => {
-  const { contacts, activeContact } = useSelector((state: RootState) => state);
+interface Props {
+  contacts: Contact[],
+}
+
+const ContactsList: React.FC<Props> = ({ contacts }) => {
+  const { activeContact } = useSelector((state: RootState) => state);
 
   return (
     <ul className="contacts__list">
