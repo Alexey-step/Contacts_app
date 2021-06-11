@@ -25,31 +25,6 @@ export const fetchContactsList =
     }
   };
 
-export const fetchFavorites =
-  (): AppThunk => async (dispatch, _getState, api) => {
-    dispatch(ActionCreators.setStatus(Status.LOAD));
-    try {
-      const { data } = await api.get(`${APIRoutes.CONTACTS}?isFavorite=true`);
-      dispatch(ActionCreators.setContacts(data));
-      dispatch(ActionCreators.setStatus(Status.LOADED));
-    } catch (e) {
-      dispatch(ActionCreators.setStatus(Status.ERROR));
-    }
-  };
-
-export const fetchFilteredContacts =
-  (name?: string): AppThunk =>
-  async (dispatch, _getState, api) => {
-    dispatch(ActionCreators.setStatus(Status.LOAD));
-    try {
-      const { data } = await api.get(`${APIRoutes.CONTACTS}?name_like=${name}`);
-      dispatch(ActionCreators.setContacts(data));
-      dispatch(ActionCreators.setStatus(Status.LOADED));
-    } catch (e) {
-      dispatch(ActionCreators.setStatus(Status.ERROR));
-    }
-  };
-
 export const setContact =
   (contact: Contact): AppThunk =>
   async (dispatch, _getState, api) => {
