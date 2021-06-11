@@ -1,0 +1,18 @@
+@import '../../theme/variable.scss';
+
+.favorite-icon {
+  width: 32px;
+  height: 32px;
+  stroke: $dark-blue;
+  fill: transparent;
+
+  &--active {
+    fill: $basic-yellow;
+  }
+
+  &:focus,
+  &:hover {
+    fill-opacity: 0.8;
+    stroke-opacity: 0.8;
+  }
+}

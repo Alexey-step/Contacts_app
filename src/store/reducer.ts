@@ -1,15 +1,22 @@
-import { createReducer } from '@reduxjs/toolkit';
-import * as ActionCreators from './action-creators';
-import { Contact } from '../types';
+import { createReducer } from "@reduxjs/toolkit";
+import * as ActionCreators from "./action-creators";
+import { Contact } from "../types";
+import { Status, Option } from "../const";
 
 interface InitialStateTypes {
-  contacts: Array<Contact>,
-  activeContact: Contact,
+  contacts: Contact[];
+  auth: string;
+  status: string;
+  option: string;
+  filter: string;
 }
 
 const initialState: InitialStateTypes = {
   contacts: [],
-  activeContact: null,
+  auth: "",
+  status: Status.PENDING,
+  option: Option.ALL_CONTACTS,
+  filter: "",
 };
 
 export const reducer = createReducer(initialState, (builder) => {
@@ -17,14 +24,25 @@ export const reducer = createReducer(initialState, (builder) => {
     .addCase(ActionCreators.setContact, (state, action) => {
       state.contacts = [...state.contacts, action.payload];
     })
+    .addCase(ActionCreators.setOption, (state, action) => {
+      state.option = action.payload;
+    })
+    .addCase(ActionCreators.setFilter, (state, action) => {
+      state.filter = action.payload;
+    })
     .addCase(ActionCreators.setContacts, (state, action) => {
       state.contacts = action.payload;
     })
-    .addCase(ActionCreators.setActiveContact, (state, action) => {
-      state.activeContact = action.payload;
+    .addCase(ActionCreators.setAuthorization, (state, action) => {
+      state.auth = action.payload;
+    })
+    .addCase(ActionCreators.setStatus, (state, action) => {
+      state.status = action.payload;
     })
     .addCase(ActionCreators.updateContact, (state, action) => {
-      const index = state.contacts.findIndex((contact) => contact.id === action.payload.id);
+      const index = state.contacts.findIndex(
+        (contact) => contact.id === action.payload.id
+      );
       state.contacts = [
         ...state.contacts.slice(0, index),
         action.payload,
@@ -32,7 +50,9 @@ export const reducer = createReducer(initialState, (builder) => {
       ];
     })
     .addCase(ActionCreators.deleteContact, (state, action) => {
-      const index = state.contacts.findIndex((contact) => contact.id === action.payload);
+      const index = state.contacts.findIndex(
+        (contact) => contact.id === action.payload
+      );
       state.contacts = [
         ...state.contacts.slice(0, index),
         ...state.contacts.slice(index + 1),

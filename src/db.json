@@ -1,39 +1,123 @@
 {
   "contacts": [
     {
-      "id": "1",
-      "name": "GOSHA",
-      "phone": "11"
+      "name": "Luda",
+      "address": "Alfakadabra",
+      "email": "mail@mail.ru",
+      "phone": "+79058613768",
+      "isFavorite": true,
+      "id": 5
     },
     {
       "name": "GRISHA",
-      "phone": "124",
-      "id": 1621166345777
+      "address": "",
+      "email": "xxx@xxxx.ru",
+      "phone": "+79058613768",
+      "isFavorite": false,
+      "id": 6
     },
     {
-      "name": "Arex",
-      "phone": "124213",
-      "id": 1621250907517
+      "name": "GOSHA",
+      "address": "Alfak",
+      "email": "",
+      "phone": "+79058613768",
+      "isFavorite": true,
+      "id": 7
+    },
+    {
+      "name": "Vasya",
+      "address": "Alfakadabra",
+      "email": "olivier@mail.com",
+      "phone": "+79058613768",
+      "isFavorite": true,
+      "id": 8
+    },
+    {
+      "name": "Volodya",
+      "address": "Alfakadabra",
+      "email": "xxx@xxxx.ru",
+      "phone": "+79058613768",
+      "isFavorite": true,
+      "id": 9
+    },
+    {
+      "name": "Henry",
+      "address": "Kompros",
+      "email": "henry@mail.ru",
+      "phone": "+79028888822",
+      "isFavorite": true,
+      "id": 10
+    },
+    {
+      "name": "Irina",
+      "address": "Kompros",
+      "email": "superuser@mail.ru",
+      "phone": "+79023333333",
+      "isFavorite": false,
+      "id": 11
+    },
+    {
+      "name": "Jura",
+      "address": "Kompros",
+      "email": "olivier@mail.com",
+      "phone": "+78089766957",
+      "isFavorite": false,
+      "id": 12
+    },
+    {
+      "name": "Dima",
+      "address": "Kompros",
+      "email": "alex@gmail.com",
+      "phone": "+79058613768",
+      "isFavorite": false,
+      "id": 13
+    },
+    {
+      "name": "ROMA",
+      "address": "Bulvar",
+      "email": "roma@mail.com",
+      "phone": "+79098888888",
+      "isFavorite": false,
+      "id": 14
     },
     {
       "name": "Aleksey",
-      "phone": "12421",
-      "id": 1621250949281
+      "address": "Alfakadabra",
+      "email": "mail@mail.ru",
+      "phone": "+79058613768",
+      "isFavorite": true,
+      "id": 15
     },
     {
+      "name": "Eva",
+      "address": "Kompros",
+      "email": "eva@mail.ru",
+      "phone": "+79058613768",
+      "isFavorite": true,
+      "id": 16
+    },
+    {
+      "name": "Ula",
+      "address": "Bulvar",
+      "email": "superuser@mail.ru",
+      "phone": "+79198756743",
+      "isFavorite": false,
+      "id": 17
+    }
+  ],
+  "users": [
+    {
+      "email": "alex@gmail.com",
+      "password": "$2a$10$gQHiW8e3XPJgaM085RbggO5dmTfd2JE27Y8c72YP/or.fcejpcs.e",
       "name": "Aleksey",
-      "phone": "7 (790) 586-13-76",
-      "id": 1621250954251
+      "secondName": "Bezon",
+      "id": 3
     },
     {
-      "name": "Luda",
-      "phone": "7 (790) 586",
-      "id": 1621250974968
-    },
-    {
-      "name": "luda",
-      "phone": "124213",
-      "id": 1621252054591
+      "email": "mail@mail.ru",
+      "password": "$2a$10$XcFlF8rJqIy3dirJPOHXVu25U9hox3DQu5uVPsi5VKHR5kfgpjbUa",
+      "name": "Aleksey",
+      "id": 4
     }
   ]
 }

@@ -1,18 +1,46 @@
-import React from 'react';
+import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
+import { useSelector } from "react-redux";
+import LoginForm from "../../login-form/login-form";
+import withError from "../../../hocs/with-error/with-error";
+import { RootState } from "../../../store/reducer";
+import { AppRoutes } from "../../../const";
 
-import './login.scss';
+import "./login.scss";
 
 const Login: React.FC = () => {
+  const [isRegistration, setIsRegistration] = useState(false);
+  const { auth } = useSelector((state: RootState) => state);
+
+  if (auth) {
+    return <Redirect to={`${AppRoutes.MAIN}`} />;
+  }
+
   return (
-    <section className="login-form">
-      <form className="form">
-        <label className="form__label" htmlFor="email">Email</label>
-        <input className="form__field" type="email" name="email" id="email" required />
-        <label className="form__label" htmlFor="password">Password</label>
-        <input className="form__field" type="password" name="password" id="password" required />
-      </form>
+    <section className="login">
+      <h1 className="login__title">
+        {isRegistration ? "Registration" : "Authorization"}
+      </h1>
+      <LoginForm isRegistration={isRegistration} />
+      <div>
+        <button
+          onClick={() => setIsRegistration(true)}
+          className="login__btn"
+          type="button"
+        >
+          Registration
+        </button>
+        /
+        <button
+          onClick={() => setIsRegistration(false)}
+          className="login__btn"
+          type="button"
+        >
+          Sign in
+        </button>
+      </div>
     </section>
   );
 };
 
-export default Login;
+export default withError(React.memo(Login));

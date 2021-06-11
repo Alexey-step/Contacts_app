@@ -1,26 +1,19 @@
-import React from 'react';
-import { Contact } from '../../../types';
+import React from "react";
+import { Contact } from "../../../types";
 
-import './search-item.scss';
+import "./search-item.scss";
 
 interface Props {
-  contact: Contact,
-  onContactClick: (contact: Contact) => void,
+  contact: Contact;
+  onContactClick: (name: string) => void;
 }
 
 const SearchItem: React.FC<Props> = ({ contact, onContactClick }) => {
-  const handleItem = (item: Contact) => {
-    onContactClick(item);
-  };
-
   return (
-    <li
-      className="search__item"
-      onClick={() => handleItem(contact)}
-    >
+    <li className="search__item" onClick={() => onContactClick(contact.name)}>
       {contact.name}
     </li>
   );
 };
 
-export default SearchItem;
+export default React.memo(SearchItem);

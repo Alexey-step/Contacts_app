@@ -13,4 +13,8 @@
   width: 300px;
   border: 1px solid $basic-yellow;
   background-color: #fff;
+  overflow: scroll;
+  height: auto;
+  max-height: 110px;
+  z-index: 3;
 }

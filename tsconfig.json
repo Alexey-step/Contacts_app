@@ -11,10 +11,10 @@
     "outDir": "./dist",
     "sourceMap": true,
     "module": "commonjs",
-    "target": "es2016",
+    "target": "esnext",
     "jsx": "react",
-    "allowSyntheticDefaultImports": true,
     "lib": ["dom"],
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
   },
 }

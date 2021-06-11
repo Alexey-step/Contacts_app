@@ -1,19 +1,21 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import ReactPaginate, { ReactPaginateProps } from 'react-paginate';
-import { PaginateConfig } from '../../../const';
-import { RootState } from '../../../store/reducer';
+import React from "react";
+import ReactPaginate, { ReactPaginateProps } from "react-paginate";
+import { PaginateConfig } from "../../../const";
 
-import './paginate.scss';
+import "./paginate.scss";
 
 interface Props {
-  pageCount: number,
-  onPageChange: (item: number) => void
+  pageCount: number;
+  onPageChange: (item: number) => void;
+  currentPage: number;
 }
 
-const Paginate: React.FC<Props> = ({ pageCount, onPageChange }) => {
-  const { activeContact } = useSelector((state: RootState) => state);
-  type OnPageChangeCallback = ReactPaginateProps['onPageChange'];
+const Paginate: React.FC<Props> = ({
+  pageCount,
+  onPageChange,
+  currentPage,
+}) => {
+  type OnPageChangeCallback = ReactPaginateProps["onPageChange"];
 
   const handlePageClick: OnPageChangeCallback = (selectedItem) => {
     onPageChange(selectedItem.selected);
@@ -26,7 +28,8 @@ const Paginate: React.FC<Props> = ({ pageCount, onPageChange }) => {
         nextLabel={PaginateConfig.NEXT_LABEL}
         breakLabel={PaginateConfig.BREAK_LABEL}
         breakClassName="break-me"
-        pageCount={activeContact ? 1 : pageCount}
+        pageCount={pageCount}
+        forcePage={currentPage}
         marginPagesDisplayed={PaginateConfig.MARGIN_PAGES}
         pageRangeDisplayed={PaginateConfig.PAGE_RANGE}
         onPageChange={handlePageClick}
@@ -37,4 +40,4 @@ const Paginate: React.FC<Props> = ({ pageCount, onPageChange }) => {
   );
 };
 
-export default Paginate;
+export default React.memo(Paginate);

@@ -1,0 +1,32 @@
+@import '../UI/theme/variable.scss';
+
+.login-form {
+  width: 320px;
+  padding: 20px;
+}
+
+.login-form__group {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.login-form__field {
+  width: 100%;
+  padding: 15px 10px;
+  background-color: $basic-white;
+  border: 1px solid $basic-grey;
+  border-radius: 2px;
+}
+
+.login-form__btn {
+  width: 100%;
+  padding: 16px 20px 13px;
+  background-color: $basic-yellow;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.login-form__text {
+  color: $special-pink;
+}

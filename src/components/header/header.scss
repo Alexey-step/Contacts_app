@@ -2,10 +2,24 @@
 
 .header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: $dark-blue;
   padding: 20px;
   margin-bottom: 40px;
   min-height: 150px;
+}
+
+.header__btn {
+  border: none;
+  background-color: $basic-yellow;
+  width: 200px;
+  padding: 10px;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    background-color: $opacity-yellow;
+  }
 }
