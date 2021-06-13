@@ -11,7 +11,7 @@ const mockStore = configureStore([]);
 describe(`Test Contacts component`, () => {
   jest.spyOn(redux, `useDispatch`);
   jest.spyOn(redux, `useSelector`);
-  it(`Contacts should render correctly`, () => {
+  it(`Contacts component should render correctly`, () => {
     const store = mockStore({
       contacts: MockContacts.start,
     });

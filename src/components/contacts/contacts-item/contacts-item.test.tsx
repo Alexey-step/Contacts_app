@@ -10,7 +10,7 @@ import { Contact } from "../../../test-mocks/test-mocks";
 const mockStore = configureStore([]);
 describe(`Test ContactsItem component`, () => {
   jest.spyOn(redux, `useDispatch`);
-  it(`ContactsItem should render correctly`, () => {
+  it(`ContactsItem component should render correctly`, () => {
     const store = mockStore({});
     const history = createMemoryHistory();
     render(

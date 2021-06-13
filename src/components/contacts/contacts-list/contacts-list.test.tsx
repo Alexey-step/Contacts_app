@@ -9,7 +9,7 @@ import { MockContacts } from "../../../test-mocks/test-mocks";
 
 const mockStore = configureStore([]);
 describe(`Test ContactsList component`, () => {
-  it(`ContactsList should render correctly`, () => {
+  it(`ContactsList component should render correctly`, () => {
     const store = mockStore({});
     const history = createMemoryHistory();
     render(
@@ -23,7 +23,7 @@ describe(`Test ContactsList component`, () => {
     expect(screen.getByText(/mail@mail.ru/!)).toBeInTheDocument();
     expect(screen.getAllByText(/Kompros/!)).toHaveLength(2);
   });
-  it(`ContactsList should render correctly if contacts empty`, () => {
+  it(`ContactsList component should render correctly if contacts empty`, () => {
     const store = mockStore({});
     const history = createMemoryHistory();
     render(
