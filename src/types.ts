@@ -22,5 +22,5 @@ export interface RegisterOptions {
 export interface IUseForm {
   email: string;
   password: string;
-  name: string;
+  name?: string;
 }

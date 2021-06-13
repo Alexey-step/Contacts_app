@@ -26,7 +26,7 @@ const LoginForm: React.FC<Props> = ({ isRegistration }) => {
             required: "Email is required",
             pattern: {
               value:
-                /^[a-z0-9]+[\w.-]+[a-z0-9]@[a-z][a-z0-9-]*[a-z0-9]\.[a-z]{2,}$/gim,
+                /^[a-z0-9]+[\w.-]+[a-z0-9]@[a-z][a-z0-9-]*[a-z0-9]\.[a-z]{2,4}$/gim,
               message: "Enter a valid email, like mail@mail.ru",
             },
           }}

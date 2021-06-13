@@ -8,8 +8,8 @@ interface Props {
 
 const ErrorMessage: React.FC<Props> = ({ message }) => {
   return (
-    <div className="error">
-      <p className="error__text">{message}</p>
+    <div className="form-error">
+      <p className="form-error__text">{message}</p>
     </div>
   );
 };

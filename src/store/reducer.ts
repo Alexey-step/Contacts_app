@@ -11,7 +11,7 @@ interface InitialStateTypes {
   filter: string;
 }
 
-const initialState: InitialStateTypes = {
+export const initialState: InitialStateTypes = {
   contacts: [],
   auth: "",
   status: Status.PENDING,
