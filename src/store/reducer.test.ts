@@ -2,7 +2,12 @@ import MockAdapter from "axios-mock-adapter";
 import * as ActionCreators from "./action-creators";
 import { ActionType } from "./actions";
 import { reducer, initialState } from "./reducer";
-import { Contacts, Contact, FILTER, TEST_TOKEN } from "../mocks/mocks";
+import {
+  MockContacts,
+  Contact,
+  FILTER,
+  TEST_TOKEN,
+} from "../test-mocks/test-mocks";
 import { APIRoutes, Option, Status } from "../const";
 import createAPI from "../store/api/api";
 import {
@@ -21,22 +26,22 @@ describe("Reducer work correctly", () => {
     expect(reducer(initialState, { type: "" })).toEqual(initialState);
   });
   it("Reducer should update contacts by set contacts given value", () => {
-    expect(reducer(initialState, ActionCreators.setContacts(Contacts))).toEqual(
-      {
-        ...initialState,
-        contacts: Contacts,
-      }
-    );
+    expect(
+      reducer(initialState, ActionCreators.setContacts(MockContacts))
+    ).toEqual({
+      ...initialState,
+      contacts: MockContacts,
+    });
   });
   it("Reducer should update contacts by set contact given value", () => {
     const state = {
       ...initialState,
-      contacts: Contacts.start,
+      contacts: MockContacts.start,
     };
 
     const expectedState = {
       ...initialState,
-      contacts: [...Contacts.start, Contact],
+      contacts: [...MockContacts.start, Contact],
     };
 
     expect(reducer(state, ActionCreators.setContact(Contact))).toEqual(
@@ -92,29 +97,29 @@ describe("Reducer work correctly", () => {
   it("Reducer should update contacts by update contact given value", () => {
     const state = {
       ...initialState,
-      contacts: Contacts.start,
+      contacts: MockContacts.start,
     };
 
     const expectedState = {
       ...initialState,
-      contacts: Contacts.end,
+      contacts: MockContacts.end,
     };
     expect(
-      reducer(state, ActionCreators.updateContact(Contacts.change))
+      reducer(state, ActionCreators.updateContact(MockContacts.change))
     ).toEqual(expectedState);
   });
   it("Reducer should update contacts by delete contact given value", () => {
     const state = {
       ...initialState,
-      contacts: Contacts.start,
+      contacts: MockContacts.start,
     };
 
     const expectedState = {
       ...initialState,
-      contacts: Contacts.delete,
+      contacts: MockContacts.delete,
     };
     expect(
-      reducer(state, ActionCreators.deleteContact(Contacts.change.id))
+      reducer(state, ActionCreators.deleteContact(MockContacts.change.id))
     ).toEqual(expectedState);
   });
 });
@@ -126,7 +131,7 @@ describe("Async operations work correctly", () => {
     const fetchContacts = fetchContactsList();
     const getState = jest.fn();
 
-    apiMock.onGet(`${APIRoutes.CONTACTS}/`).reply(200, Contacts.start);
+    apiMock.onGet(`${APIRoutes.CONTACTS}/`).reply(200, MockContacts.start);
 
     await fetchContacts(dispatch, getState, api);
     expect(dispatch).toHaveBeenCalledTimes(3);
@@ -136,7 +141,7 @@ describe("Async operations work correctly", () => {
     });
     expect(dispatch).toHaveBeenNthCalledWith(2, {
       type: ActionType.SET_CONTACTS,
-      payload: Contacts.start,
+      payload: MockContacts.start,
     });
     expect(dispatch).toHaveBeenNthCalledWith(3, {
       type: ActionType.SET_STATUS,
@@ -161,35 +166,35 @@ describe("Async operations work correctly", () => {
   it("Should make a correct API call to /contacts/:id", async () => {
     const apiMock = new MockAdapter(api);
     const dispatch = jest.fn();
-    const setDeleteContactRequest = deleteContact(Contacts.change.id);
+    const setDeleteContactRequest = deleteContact(MockContacts.change.id);
     const getState = jest.fn();
 
     apiMock
-      .onDelete(`${APIRoutes.CONTACTS}/${Contacts.change.id}`)
-      .reply(200, Contacts.change.id);
+      .onDelete(`${APIRoutes.CONTACTS}/${MockContacts.change.id}`)
+      .reply(200, MockContacts.change.id);
 
     await setDeleteContactRequest(dispatch, getState, api);
     expect(dispatch).toHaveBeenCalledTimes(1);
     expect(dispatch).toHaveBeenNthCalledWith(1, {
       type: ActionType.DELETE_CONTACT,
-      payload: Contacts.change.id,
+      payload: MockContacts.change.id,
     });
   });
   it("Should make a correct API call to /contacts/:id", async () => {
     const apiMock = new MockAdapter(api);
     const dispatch = jest.fn();
-    const setUpdateContactRequest = updateContact(Contacts.change);
+    const setUpdateContactRequest = updateContact(MockContacts.change);
     const getState = jest.fn();
 
     apiMock
-      .onPut(`${APIRoutes.CONTACTS}/${Contacts.change.id}`)
-      .reply(200, Contacts.change);
+      .onPut(`${APIRoutes.CONTACTS}/${MockContacts.change.id}`)
+      .reply(200, MockContacts.change);
 
     await setUpdateContactRequest(dispatch, getState, api);
     expect(dispatch).toHaveBeenCalledTimes(1);
     expect(dispatch).toHaveBeenNthCalledWith(1, {
       type: ActionType.UPDATE_CONTACT,
-      payload: Contacts.change,
+      payload: MockContacts.change,
     });
   });
   it("Should make a correct API call to /login", async () => {

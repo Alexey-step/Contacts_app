@@ -1,6 +1,11 @@
 import * as ActionCreators from "./action-creators";
 import { ActionType } from "./actions";
-import { Contacts, TEST_TOKEN, FILTER, Contact } from "../mocks/mocks";
+import {
+  MockContacts,
+  TEST_TOKEN,
+  FILTER,
+  Contact,
+} from "../test-mocks/test-mocks";
 import { Status, Option } from "../const";
 
 describe("Action creators work correctly", () => {
@@ -15,10 +20,12 @@ describe("Action creators work correctly", () => {
   it("Action creator for set contacts returns correct action", () => {
     const expectedAction = {
       type: ActionType.SET_CONTACTS,
-      payload: Contacts.start,
+      payload: MockContacts.start,
     };
 
-    expect(ActionCreators.setContacts(Contacts.start)).toEqual(expectedAction);
+    expect(ActionCreators.setContacts(MockContacts.start)).toEqual(
+      expectedAction
+    );
   });
   it("Action creator for delete contact returns correct action", () => {
     const expectedAction = {

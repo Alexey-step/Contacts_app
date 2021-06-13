@@ -21,6 +21,8 @@
     "no-use-before-define": "off",
     "import/no-unresolved": "off",
     "import/extensions": "off",
-    "no-shadow": "off"
+    "no-shadow": "off",
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/no-non-null-assertion": "off"
   }
 }

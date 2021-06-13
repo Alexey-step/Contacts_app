@@ -9,7 +9,7 @@ import MarkerIcon from "../../UI/icons/marker-icon/marker-icon";
 import EditIcon from "../../UI/icons/edit-icon/edit-icon";
 import FavoriteIcon from "../../UI/icons/favorite-icon/favorite-icon";
 
-import "./contacts__item.scss";
+import "./contacts-item.scss";
 
 interface Props {
   contact: Contact;
