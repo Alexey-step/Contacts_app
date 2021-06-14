@@ -5,6 +5,7 @@ import "./email-icon.scss";
 const EmailIcon: React.FC = () => {
   return (
     <svg
+      data-testid="email-icon"
       className="email-icon"
       viewBox="0 0 16 12"
       xmlns="http://www.w3.org/2000/svg"

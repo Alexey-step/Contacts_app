@@ -9,6 +9,7 @@ interface Props {
 const FavoriteIcon: React.FC<Props> = ({ isFavorite }) => {
   return (
     <svg
+      data-testid="favorite-icon"
       className={`favorite-icon ${isFavorite && "favorite-icon--active"}`}
       viewBox="0 0 24 22"
       xmlns="http://www.w3.org/2000/svg"

@@ -5,7 +5,7 @@ import "./edit-icon.scss";
 const EditIcon: React.FC = () => {
   return (
     <svg
-      data-testid="edit"
+      data-testid="edit-icon"
       className="edit-icon"
       viewBox="0 0 18 16"
       xmlns="http://www.w3.org/2000/svg"

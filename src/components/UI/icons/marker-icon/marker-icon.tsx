@@ -5,6 +5,7 @@ import "./marker-icon.scss";
 const MarkerIcon: React.FC = () => {
   return (
     <svg
+      data-testid="marker-icon"
       className="marker-icon"
       viewBox="0 0 14 20"
       xmlns="http://www.w3.org/2000/svg"

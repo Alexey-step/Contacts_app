@@ -1,0 +1,18 @@
+@import "../../UI/theme/variable.scss";
+@import "../../UI/theme/mixin.scss";
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+.not-found__title {
+  @include font(32px, 36px);
+}
+
+.not-found__link {
+  color: $special-pink;
+  @include font(20px, 24px);
+}

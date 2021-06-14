@@ -16,6 +16,7 @@ const Header: React.FC<Props> = ({ onOpen }) => {
     <header className="header">
       <Search />
       <button
+        data-testid="add-contact"
         onClick={handleAddContactBtn}
         className="header__btn"
         type="button"

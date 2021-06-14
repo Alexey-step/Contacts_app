@@ -24,11 +24,13 @@ const Sort: React.FC<Props> = ({ onSort }) => {
   return (
     <section className="sort">
       <button
+        data-testid="sort-all"
         onClick={() => handleOption(Option.ALL_CONTACTS)}
         className="sort__btn"
         type="button"
       >{`All contacts (${contacts.length})`}</button>
       <button
+        data-testid="sort-favorites"
         onClick={() => handleOption(Option.FAVORITES)}
         className="sort__btn"
         type="button"

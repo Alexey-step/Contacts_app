@@ -10,7 +10,11 @@ interface Props {
 
 const SearchItem: React.FC<Props> = ({ contact, onContactClick }) => {
   return (
-    <li className="search__item" onClick={() => onContactClick(contact.name)}>
+    <li
+      data-testid="contact"
+      className="search__item"
+      onClick={() => onContactClick(contact.name)}
+    >
       {contact.name}
     </li>
   );

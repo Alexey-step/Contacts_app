@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import { setAuthorization } from "../../store/action-creators";
 import Main from "../pages/main/main";
 import Login from "../pages/login/login";
+import NotFound from "../pages/not-found/not-found";
 import PrivateRoute from "../private-route/private-route";
 import { AppRoutes } from "../../const";
 
@@ -22,6 +23,9 @@ const App: React.FC = () => {
       <PrivateRoute path={`${AppRoutes.MAIN}`} exact render={() => <Main />} />
       <Route path={`${AppRoutes.LOGIN}`} exact>
         <Login />
+      </Route>
+      <Route>
+        <NotFound />
       </Route>
     </Switch>
   );

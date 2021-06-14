@@ -21,6 +21,7 @@ export enum Option {
 export enum AppRoutes {
   LOGIN = "/login",
   MAIN = "/",
+  NOT_FOUND = "/not-found",
 }
 
 export enum APIRoutes {
