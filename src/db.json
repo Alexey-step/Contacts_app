@@ -81,28 +81,12 @@
       "id": 14
     },
     {
-      "name": "Aleksey",
-      "address": "Alfakadabra",
-      "email": "mail@mail.ru",
-      "phone": "+79058613768",
-      "isFavorite": true,
-      "id": 15
-    },
-    {
       "name": "Eva",
       "address": "Kompros",
       "email": "eva@mail.ru",
       "phone": "+79058613768",
       "isFavorite": true,
       "id": 16
-    },
-    {
-      "name": "Ula",
-      "address": "Bulvar",
-      "email": "superuser@mail.ru",
-      "phone": "+79198756743",
-      "isFavorite": false,
-      "id": 17
     }
   ],
   "users": [

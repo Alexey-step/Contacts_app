@@ -4,7 +4,8 @@
   "description": "Contacts App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint --ext .tsx --ext .ts src/",
+    "test": "jest",
     "server": "json-server --watch ./src/db.json -m ./node_modules/json-server-auth",
     "start": "webpack serve --mode development",
     "build": "webpack --mode production"
@@ -65,7 +66,7 @@
     "style-loader": "2.0.0",
     "ts-jest": "27.0.3",
     "ts-loader": "9.1.2",
-    "ts-node": "^10.0.0",
+    "ts-node": "10.0.0",
     "typescript": "4.2.4",
     "webpack": "5.37.0",
     "webpack-cli": "4.7.0",

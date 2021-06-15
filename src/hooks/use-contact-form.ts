@@ -45,17 +45,12 @@ const useContactForm = ({ contact, onSave }: Props) => {
     onSave(false);
   };
 
-  const handleDeleteBtn = () => {
-    dispatch(deleteContact(contact.id));
-  };
-
   return {
-    handleSaveBtn: contact ? handleUpdateForm : handleSubmitForm,
     register,
     errors,
-    handleSubmit,
+    handleSubmit: handleSubmit(contact ? handleUpdateForm : handleSubmitForm),
     status,
-    handleDelete: handleDeleteBtn,
+    handleDelete: () => dispatch(deleteContact(contact.id)),
   };
 };
 

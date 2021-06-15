@@ -23,10 +23,11 @@ const useLoginForm = (isRegistration: boolean) => {
   };
 
   return {
-    handleSaveBtn: isRegistration ? handleRegistrationBtn : handleSignInBtn,
     register,
     errors,
-    handleSubmit,
+    handleSubmit: handleSubmit(
+      isRegistration ? handleRegistrationBtn : handleSignInBtn
+    ),
   };
 };
 

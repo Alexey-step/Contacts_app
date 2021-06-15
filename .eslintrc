@@ -14,10 +14,7 @@
   "plugins": ["@typescript-eslint", "prettier", "promise", "import"],
   "rules": {
     "no-param-reassign": ["error", { "props": false }],
-    "react/prop-types": 0,
-    "arrow-body-style": "off",
     "react/jsx-props-no-spreading": "off",
-    "object-curly-newline": "off",
     "no-use-before-define": "off",
     "import/no-unresolved": "off",
     "import/extensions": "off",
