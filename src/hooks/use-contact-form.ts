@@ -5,7 +5,7 @@ import {
   updateContact,
   deleteContact,
 } from "../store/api/api-actions";
-import { Contact } from "../types";
+import { Contact, IForm } from "../types";
 import { RootState } from "../store/reducer";
 
 interface Props {
@@ -13,14 +13,14 @@ interface Props {
   onSave?: (isSave: boolean) => void;
 }
 
-const useContactForm = ({ contact, onSave }: Props) => {
+const useContactForm = ({ contact, onSave }: Props): IForm => {
   const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<Contact>();
+  } = useForm();
   const { status } = useSelector((state: RootState) => state);
   const handleSubmitForm = (data: Contact) => {
     dispatch(

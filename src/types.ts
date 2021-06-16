@@ -1,3 +1,5 @@
+import { RegisterOptions, FieldValues } from "react-hook-form";
+
 export interface Contact {
   id: number;
   name: string;
@@ -7,16 +9,12 @@ export interface Contact {
   isFavorite: boolean;
 }
 
-export interface RegisterOptions {
-  required?: string;
-  maxLength?: {
-    value: number;
-    message: string;
-  };
-  pattern?: {
-    value: RegExp;
-    message: string;
-  };
+export interface IForm {
+  register: (value: string, options: RegisterOptions) => FieldValues;
+  errors: FieldValues;
+  handleSubmit: () => void;
+  status?: string;
+  handleDelete?: () => void;
 }
 
 export interface IUseForm {

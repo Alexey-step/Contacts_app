@@ -1,16 +1,16 @@
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { login, registration } from "../store/api/api-actions";
-import { IUseForm } from "../types";
+import { IUseForm, IForm } from "../types";
 
-const useLoginForm = (isRegistration: boolean) => {
+const useLoginForm = (isRegistration: boolean): IForm => {
   const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<IUseForm>();
+  } = useForm();
 
   const handleSignInBtn = (data: IUseForm) => {
     dispatch(login(data));

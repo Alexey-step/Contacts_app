@@ -1,12 +1,12 @@
 import React from "react";
-import { RegisterOptions } from "../../types";
+import { RegisterOptions, FieldValues } from "react-hook-form";
 
 interface Props {
   type: string;
   value: string;
   label: string;
   options?: RegisterOptions;
-  register: (name: string, options: RegisterOptions) => void;
+  register: (value: string, options: RegisterOptions) => FieldValues;
   className: string;
   defaultValue?: string | number;
 }
