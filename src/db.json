@@ -1,4 +1,11 @@
 {
-  "contacts": [],
+  "contacts": [
+    {
+      "name": "Aleksey",
+      "email": "mail@mail.ru",
+      "phone": "+79099999999",
+      "id": 1
+    }
+  ],
   "users": []
 }
