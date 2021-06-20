@@ -1,6 +1,6 @@
 # **Notebook App (React, TypeScript)**
 
-🔎 [Watch project live](https://cards-list-app.netlify.app)
+🔎 [Watch project live](https://mynotebook-app.netlify.app)
 
 The project is a simple SPA, like notebook, where you can register, and then add contacts in your notebook, add this contacts to favorite, edit, delete them.Also you can search by contacts. And I made many improvements to the app, such as:
 
