@@ -5,12 +5,12 @@
       "address": "Alfakadabra",
       "email": "mail@mail.ru",
       "phone": "+79058613768",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 5
     },
     {
       "name": "GRISHA",
-      "address": "",
+      "address": "Hasana",
       "email": "xxx@xxxx.ru",
       "phone": "+79058613768",
       "isFavorite": false,
@@ -87,6 +87,14 @@
       "phone": "+79058613768",
       "isFavorite": true,
       "id": 16
+    },
+    {
+      "name": "Lucya",
+      "address": "Alfakadabra",
+      "email": "lusya@mail.com",
+      "phone": "+79096675523",
+      "isFavorite": false,
+      "id": 17
     }
   ],
   "users": [
