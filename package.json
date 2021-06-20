@@ -7,7 +7,7 @@
     "eslint": "eslint --ext .tsx --ext .ts src/",
     "test": "jest",
     "server": "json-server --watch ./src/db.json -m ./node_modules/json-server-auth",
-    "start": "node server.ts",
+    "start": "node server.js",
     "build": "webpack --mode production"
   },
   "author": "Alexey Stepanov",
