@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosResponse, AxiosInstance } from "axios";
 
-const URL = "http://localhost:3000";
+const URL = "https://mynotebook-app.herokuapp.com";
 const REQUEST_TIMEOUT = 5000;
 
 const createAPI = (): AxiosInstance => {
