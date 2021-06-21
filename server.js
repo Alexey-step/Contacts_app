@@ -9,12 +9,6 @@ const PORT = process.env.PORT || 4000;
 
 server.db = router.db
 server.use(middlewares);
-server.get('/*', (req, res) => {
-  res.jsonp(req.query)
-})
-server.use(jsonServer.rewriter({
-  '/api/*': '/$1',
-}))
 server.use(auth);
 server.use(router);
 
