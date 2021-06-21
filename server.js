@@ -13,9 +13,6 @@ server.use(middlewares);
 server.get('/*', (req, res) => {
   res.sendFile(path.resolve(__dirname + '/dist/index.html'))
 })
-server.use(jsonServer.rewriter({
-  '/api/*': '/$1',
-}))
 server.use(auth);
 server.use(router);
 
