@@ -37,7 +37,6 @@ npm i
 ##### **Usage**
 
 ```
-npm run server
 npm run start
 ```
 
