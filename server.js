@@ -1,6 +1,5 @@
 const jsonServer = require("json-server");
 const server = jsonServer.create();
-const path = require("path");
 const auth = require('json-server-auth');
 const router = jsonServer.router("./db.json");
 const middlewares = jsonServer.defaults({
@@ -11,8 +10,11 @@ const PORT = process.env.PORT || 4000;
 server.db = router.db
 server.use(middlewares);
 server.get('/*', (req, res) => {
-  res.sendFile(path.resolve(__dirname + '/dist/index.html'))
+  res.jsonp(req.query)
 })
+server.use(jsonServer.rewriter({
+  '/api/*': '/$1',
+}))
 server.use(auth);
 server.use(router);
 
