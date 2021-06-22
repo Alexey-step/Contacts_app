@@ -17,7 +17,7 @@ export const fetchContactsList =
   (): AppThunk => async (dispatch, _getState, api) => {
     dispatch(ActionCreators.setStatus(Status.LOAD));
     try {
-      const { data } = await api.get(`${APIRoutes.CONTACTS}/`);
+      const { data } = await api.get(`${APIRoutes.CONTACTS}`);
       dispatch(ActionCreators.setContacts(data));
       dispatch(ActionCreators.setStatus(Status.LOADED));
     } catch (e) {
@@ -29,7 +29,7 @@ export const setContact =
   (contact: Contact): AppThunk =>
   async (dispatch, _getState, api) => {
     try {
-      const { data } = await api.post(`${APIRoutes.CONTACTS}/`, contact);
+      const { data } = await api.post(`${APIRoutes.CONTACTS}`, contact);
       dispatch(ActionCreators.setContact(data));
     } catch (e) {
       dispatch(ActionCreators.setStatus(Status.ERROR));
