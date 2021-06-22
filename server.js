@@ -10,14 +10,11 @@ const PORT = process.env.PORT || 4000;
 
 server.db = router.db
 server.use(middlewares);
-server.get("/**", (req, res) => {
+router.render = (req, res) => {
   if (res.status(404)) {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'))
-  } else {
-    console.log(req)
-    return req
   }
-})
+}
 
 server.use(auth);
 server.use(router);
