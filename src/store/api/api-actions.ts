@@ -83,6 +83,7 @@ export const registration =
         data: { accessToken },
       } = await api.post(`${APIRoutes.REGISTER}`, { email, password, name });
       dispatch(ActionCreators.setAuthorization(accessToken));
+      Cookie.set("user", accessToken, { expires: 1 / 24 });
     } catch (e) {
       dispatch(ActionCreators.setStatus(Status.ERROR));
     }
