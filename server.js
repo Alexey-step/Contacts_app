@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 4000;
 
 server.db = router.db
 server.use(middlewares);
-router.get("/**", (req, res) => {
+server.get("/**", (req, res) => {
   if (res.status(404)) {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'))
   }
