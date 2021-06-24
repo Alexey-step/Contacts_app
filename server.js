@@ -13,10 +13,10 @@ app.db = router.db
 app.use(middlewares);
 app.use(auth);
 app.use(router);
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, './dist')));
 
-app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+app.get('/**', function (req, res) {
+    res.sendFile(path.join(__dirname + './dist', 'index.html'));
 });
 
 app.listen(PORT, () => {
