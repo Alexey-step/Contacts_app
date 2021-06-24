@@ -18,9 +18,10 @@ app.use(jsonServer.rewriter({
 app.use('/api', router);
 
 app.use(express.static(path.join(__dirname, 'dist')));
-    app.get('/*', function (req, res) {
-        res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-    });
+app.get('/contacts', (req, res) => req.body.contacts);
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`)
