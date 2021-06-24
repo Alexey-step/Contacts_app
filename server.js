@@ -4,10 +4,13 @@ const auth = require('json-server-auth');
 const path = require('path');
 const express = require('express');
 const middlewares = jsonServer.defaults();
-const router = jsonServer.router('db.json');
+const router = jsonServer.router('./db.json');
 const port = process.env.PORT || 3001;
 
-app.use('/db', middlewares, auth, router);
+app.db = router.db
+app.use(middlewares);
+app.use(auth);
+app.use(router);
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('/*', function (req, res) {
