@@ -25,9 +25,9 @@ export enum AppRoutes {
 }
 
 export enum APIRoutes {
-  LOGIN = "/login",
-  CONTACTS = "/contacts",
-  REGISTER = "/register",
+  LOGIN = "/api/login",
+  CONTACTS = "/api/contacts",
+  REGISTER = "/api/register",
 }
 
 export const CONTACTS_PER_PAGE = 6;
