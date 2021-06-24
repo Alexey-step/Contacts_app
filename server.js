@@ -3,9 +3,11 @@ const app = jsonServer.create();
 const auth = require('json-server-auth');
 const path = require('path');
 const express = require('express');
-const middlewares = jsonServer.defaults();
+const middlewares = jsonServer.defaults({
+  static: "./dist"
+});
 const router = jsonServer.router('./db.json');
-const port = process.env.PORT || 3001;
+const PORT = process.env.PORT || 4000;
 
 app.db = router.db
 app.use(middlewares);
@@ -17,4 +19,6 @@ app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-server.listen(port);
+app.listen(PORT, () => {
+  console.log(`Server is running on ${PORT}`)
+});
