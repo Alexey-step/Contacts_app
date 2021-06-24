@@ -1,5 +1,6 @@
 const jsonServer = require('json-server');
 const app = jsonServer.create();
+const express = require('express');
 const auth = require('json-server-auth');
 const path = require('path');
 const middlewares = jsonServer.defaults({
@@ -14,11 +15,12 @@ app.use(auth);
 app.use(jsonServer.rewriter({
   '/api/*': '/$1',
 }))
-app.use(router);
+app.use('/api', router);
 
-app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, './dist', 'index.html'));
-});
+app.use(express.static(path.join(__dirname, 'dist')));
+    app.get('/*', function (req, res) {
+        res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+    });
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`)
