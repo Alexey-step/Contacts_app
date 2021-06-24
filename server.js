@@ -13,7 +13,7 @@ app.use(auth);
 app.use(jsonServer.rewriter({
   '/api/*': '/$1',
 }))
-app.use('/api', router);
+app.use(router);
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`)
