@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 4000;
 app.use(jsonServer.rewriter({
   '/api/*': '/$1',
 }))
-app.use(middlewares, auth, router);
+app.use('/api', middlewares, auth, router);
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('/*', function (req, res) {
