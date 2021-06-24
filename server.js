@@ -3,11 +3,16 @@ const app = jsonServer.create();
 const auth = require('json-server-auth');
 const path = require('path');
 const express = require('express');
-const middlewares = jsonServer.defaults();
+const middlewares = jsonServer.defaults({
+  static: "./dist"
+});
 const router = jsonServer.router('./db.json');
 const PORT = process.env.PORT || 4000;
 
-app.use('/db', middlewares, auth, router);
+app.use(jsonServer.rewriter({
+  '/api/*': '/$1',
+}))
+app.use(middlewares, auth, router);
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('/*', function (req, res) {
