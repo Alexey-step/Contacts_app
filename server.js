@@ -9,10 +9,11 @@ const middlewares = jsonServer.defaults({
 const router = jsonServer.router('./db.json');
 const PORT = process.env.PORT || 4000;
 
+app.use(middlewares);
 app.use(jsonServer.rewriter({
   '/api/*': '/$1',
 }))
-app.use('/api', middlewares, auth, router);
+app.use(auth, router);
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('/*', function (req, res) {
