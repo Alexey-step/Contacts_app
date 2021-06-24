@@ -3,20 +3,15 @@ const app = jsonServer.create();
 const auth = require('json-server-auth');
 const path = require('path');
 const express = require('express');
-const middlewares = jsonServer.defaults({
-  static: "./dist"
-});
+const middlewares = jsonServer.defaults();
 const router = jsonServer.router('./db.json');
 const PORT = process.env.PORT || 4000;
 
-app.db = router.db
-app.use(middlewares);
-app.use(auth);
-app.use(router);
-app.use(express.static(path.join(__dirname, './dist')));
+app.use('/db', middlewares, auth, router);
+app.use(express.static(path.join(__dirname, 'dist')));
 
-app.get('/**', function (req, res) {
-    res.sendFile(path.join(__dirname + './dist', 'index.html'));
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 app.listen(PORT, () => {
