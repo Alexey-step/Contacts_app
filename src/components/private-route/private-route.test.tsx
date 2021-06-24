@@ -3,12 +3,12 @@ import { render, screen } from "@testing-library/react";
 import * as redux from "react-redux";
 import configureStore from "redux-mock-store";
 import { Router, Route } from "react-router-dom";
-import { createMemoryHistory } from "history";
+import { createMemoryHistory, History } from "history";
 import PrivateRoute from "./private-route";
 import { TEST_TOKEN } from "../../test-mocks/test-mocks";
 
 const mockStore = configureStore([]);
-let history;
+let history: History;
 describe(`Test PrivateRoute component`, () => {
   beforeEach(() => {
     history = createMemoryHistory();

@@ -131,7 +131,7 @@ describe("Async operations work correctly", () => {
     const fetchContacts = fetchContactsList();
     const getState = jest.fn();
 
-    apiMock.onGet(`${APIRoutes.CONTACTS}/`).reply(200, MockContacts.start);
+    apiMock.onGet(`${APIRoutes.CONTACTS}`).reply(200, MockContacts.start);
 
     await fetchContacts(dispatch, getState, api);
     expect(dispatch).toHaveBeenCalledTimes(3);
@@ -154,7 +154,7 @@ describe("Async operations work correctly", () => {
     const setContactRequest = setContact(Contact);
     const getState = jest.fn();
 
-    apiMock.onPost(`${APIRoutes.CONTACTS}/`).reply(200, Contact);
+    apiMock.onPost(`${APIRoutes.CONTACTS}`).reply(200, Contact);
 
     await setContactRequest(dispatch, getState, api);
     expect(dispatch).toHaveBeenCalledTimes(1);

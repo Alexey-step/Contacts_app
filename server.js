@@ -1,18 +1,17 @@
-const jsonServer = require("json-server");
-const server = jsonServer.create();
+const jsonServer = require('json-server');
+const app = jsonServer.create();
 const auth = require('json-server-auth');
-const path = require("path");
-const router = jsonServer.router("./db.json");
-const middlewares = jsonServer.defaults({
-  static: "./dist"
-});
-const PORT = process.env.PORT || 4000;
+const path = require('path');
+const express = require('express');
+const middlewares = jsonServer.defaults();
+const router = jsonServer.router('db.json');
+const port = process.env.PORT || 3001;
 
-server.db = router.db
-server.use(middlewares);
-server.use(auth);
-server.use(router);
+app.use('/db', middlewares, auth, router);
+app.use(express.static(path.join(__dirname, 'dist')));
 
-server.listen(PORT, () => {
-  console.log(`Server is running on ${PORT}`)
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
+
+server.listen(port);
