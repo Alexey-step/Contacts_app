@@ -6,10 +6,10 @@
   "scripts": {
     "eslint": "eslint --ext .tsx --ext .ts src/",
     "test": "jest",
-    "dev": "webpack serve --mode development",
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
     "server": "json-server --watch ./db.json -m ./node_modules/json-server-auth",
     "start": "node server.js",
-    "build": "webpack --mode production"
+    "build": "cross-env NODE_ENV=production webpack --mode production"
   },
   "author": "Alexey Stepanov",
   "license": "ISC",
@@ -51,6 +51,7 @@
     "@typescript-eslint/parser": "4.23.0",
     "babel-loader": "8.2.2",
     "copy-webpack-plugin": "8.1.1",
+    "cross-env": "^7.0.3",
     "css-loader": "5.2.4",
     "eslint": "7.26.0",
     "eslint-config-airbnb-base": "14.2.1",
