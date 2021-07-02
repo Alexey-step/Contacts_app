@@ -25,7 +25,7 @@ export enum AppRoutes {
 }
 
 export enum APIRoutes {
-  LOGIN = "/login",
+  LOGIN = "/signin",
   CONTACTS = "/contacts",
   REGISTER = "/register",
 }
