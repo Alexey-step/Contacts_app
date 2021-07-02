@@ -8,7 +8,7 @@ const router = jsonServer.router('./db.json');
 const PORT = process.env.PORT || 4000;
 
 app.db = router.db;
-app.use('/db', middlewares);
+app.use(middlewares);
 app.use(auth);
 app.use(jsonServer.rewriter({
   '/api/*': '/$1',
