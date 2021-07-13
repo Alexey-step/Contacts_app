@@ -23,6 +23,10 @@ app.get('/*', function (req, res) {
   }
 });
 
+app.get('/contacts', function (req, res) {
+  return res;
+});
+
 app.use(router);
 
 
