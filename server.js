@@ -15,14 +15,7 @@ app.use(auth);
 app.use(jsonServer.rewriter({
   '/api/*': '/$1',
 }))
-
-app.get('/*', function (req, res) {
-  if (res.statusCode === "404") {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-  } else {
-    res.sendFile(req.body)
-  }
-});
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use(router);
 
