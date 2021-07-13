@@ -16,15 +16,16 @@ app.use(jsonServer.rewriter({
   '/api/*': '/$1',
 }))
 app.use(express.static(path.join(__dirname, 'dist')));
+
+app.get('/api/contacts', function (req, res) {
+  return res;
+});
+
 app.get('/*', function (req, res) {
   if (res.status(404)) {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
     console.log(res, req);
   }
-});
-
-app.get('/contacts', function (req, res) {
-  return res;
 });
 
 app.use(router);
