@@ -15,13 +15,14 @@ app.use(auth);
 app.use(jsonServer.rewriter({
   '/api/*': '/$1',
 }))
-if (process.env.NODE_ENV === 'production') {
- app.use(express.static(path.join(__dirname, 'dist')));
-}
-app.use(express.static(path.join(__dirname, 'dist')));
 app.use(router);
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'dist')));
+ }
+ app.use(express.static(path.join(__dirname, 'dist')));
 
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`)
-});
+})
