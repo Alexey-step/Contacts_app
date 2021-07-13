@@ -18,7 +18,7 @@ app.use(jsonServer.rewriter({
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('/*', function (req, res) {
-  if (res.status(404)) {
+  if (res.statusCode === 404) {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
   }
 });
