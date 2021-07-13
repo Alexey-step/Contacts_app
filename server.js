@@ -1,4 +1,6 @@
 const jsonServer = require('json-server');
+const express = require('express');
+const path = require('path');
 const app = jsonServer.create();
 const auth = require('json-server-auth');
 const middlewares = jsonServer.defaults({
@@ -13,7 +15,12 @@ app.use(auth);
 app.use(jsonServer.rewriter({
   '/api/*': '/$1',
 }))
+if (process.env.NODE_ENV === 'production') {
+ app.use(express.static(path.join(__dirname, 'dist')));
+}
+app.use(express.static(path.join(__dirname, 'dist')));
 app.use(router);
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`)
