@@ -16,6 +16,9 @@ app.use(jsonServer.rewriter({
   '/api/*': '/$1',
 }))
 app.use(express.static(path.join(__dirname, 'dist')));
+app.get('/*', function (req, res) {
+  console.log(req, res)
+});
 
 app.use(router);
 
