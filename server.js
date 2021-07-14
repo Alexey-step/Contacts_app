@@ -12,18 +12,17 @@ const PORT = process.env.PORT || 4000;
 app.db = router.db;
 app.use(middlewares);
 app.use(auth);
-app.use(jsonServer.rewriter({
-  '/api/*': '/$1',
-}))
+
+if (process.env.NODE_ENV === "production") {
+  app.get("*", (req, res) => {
+    res.sendFile(
+      path.resolve(__dirname, "dist", "index.html")
+    );
+  });
+}
 
 app.use(router);
 
-app.get('/*', (req, res) => {
-  let url = path.join(__dirname, 'dist', 'index.html');
-  if (!url.startsWith('/app/'))
-    url = url.substring(1);
-  res.sendFile(url);
-});
 
 
 app.listen(PORT, () => {

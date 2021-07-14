@@ -3,6 +3,5 @@
   "clean_urls": true,
   "routes": {
     "/**": "index.html"
-  },
-  "error_page": "./src/components/pages/not-found/not-found.tsx"
+  }
 }
