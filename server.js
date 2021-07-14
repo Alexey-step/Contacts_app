@@ -14,8 +14,7 @@ app.use(auth);
 
 if (process.env.NODE_ENV === "production") {
   app.get("/contacts", (req, res) => {
-    let db = router.db;
-    let contacts = db.get('contacts');
+    let contacts = app.db.get('contacts');
     res.jsonp(contacts)
   });
 
