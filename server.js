@@ -16,14 +16,14 @@ app.use(jsonServer.rewriter({
   '/api/*': '/$1',
 }))
 
+app.use(router);
+
 app.get('/*', (req, res) => {
   let url = path.join(__dirname, 'dist', 'index.html');
   if (!url.startsWith('/app/'))
     url = url.substring(1);
   res.sendFile(url);
 });
-
-app.use(router);
 
 
 app.listen(PORT, () => {

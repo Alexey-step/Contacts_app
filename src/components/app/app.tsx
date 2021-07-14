@@ -24,7 +24,7 @@ const App: React.FC = () => {
       <Route path={`${AppRoutes.LOGIN}`} exact>
         <Login />
       </Route>
-      <Route path={`${AppRoutes.NOT_FOUND}`}>
+      <Route>
         <NotFound />
       </Route>
     </Switch>
