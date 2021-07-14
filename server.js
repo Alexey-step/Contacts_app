@@ -15,7 +15,7 @@ app.use(auth);
 
 if (process.env.NODE_ENV === "production") {
   app.get("/contacts", (req, res) => {
-    res.jsonp(req.body)
+    res.jsonp(req.body.contacts)
   });
 
   app.get("*", (req, res) => {
