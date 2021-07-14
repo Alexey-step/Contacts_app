@@ -1,5 +1,4 @@
 const jsonServer = require('json-server');
-const express = require('express');
 const path = require('path');
 const app = jsonServer.create();
 const auth = require('json-server-auth');
@@ -15,7 +14,7 @@ app.use(auth);
 
 if (process.env.NODE_ENV === "production") {
   app.get("/contacts", (req, res) => {
-    res.jsonp(res.locals.data)
+    res.jsonp(res)
   });
 
   app.get("*", (req, res) => {
