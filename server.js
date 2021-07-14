@@ -13,6 +13,18 @@ app.db = router.db;
 app.use(middlewares);
 app.use(auth);
 
+if (process.env.NODE_ENV === "production") {
+  app.get("*", (req, res) => {
+    res.sendFile(
+      path.resolve(__dirname, "dist", "index.html")
+    );
+  });
+
+  app.get("/contacts", (req, res) => {
+    res.jsonp(req.query)
+  });
+}
+
 app.use(router);
 
 
