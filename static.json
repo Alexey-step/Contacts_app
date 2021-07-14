@@ -3,5 +3,11 @@
   "clean_urls": true,
   "routes": {
     "/**": "index.html"
+  },
+  "error_page": "https://mynotebook-app.herokuapp.com/not-found",
+  "proxies": {
+    "/api/": {
+      "origin": "https://mynotebook-app.herokuapp.com/"
+    }
   }
 }
