@@ -18,7 +18,7 @@ app.use(jsonServer.rewriter({
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('/api/contacts', function (req, res) {
-  return res;
+  return res.json(contacts);
 });
 
 app.get('/*', function (req, res) {
