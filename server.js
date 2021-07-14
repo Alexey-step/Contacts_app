@@ -15,16 +15,6 @@ app.use(auth);
 app.use(jsonServer.rewriter({
   '/api/*': '/$1',
 }))
-app.use(express.static(path.join(__dirname, 'dist')));
-
-app.get('/api/contacts', function (req, res) {
-  return res.json(contacts);
-});
-
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
-
 app.use(router);
 
 
