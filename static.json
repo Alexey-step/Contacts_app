@@ -4,10 +4,5 @@
   "routes": {
     "/**": "index.html"
   },
-  "error_page": "https://mynotebook-app.herokuapp.com/not-found",
-  "proxies": {
-    "/api/": {
-      "origin": "https://mynotebook-app.herokuapp.com/"
-    }
-  }
+  "error_page": "./src/components/pages/not-found/not-found.tsx"
 }
