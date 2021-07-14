@@ -22,10 +22,7 @@ app.get('/api/contacts', function (req, res) {
 });
 
 app.get('/*', function (req, res) {
-  if (res.status(404)) {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-    console.log(res, req);
-  }
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 app.use(router);
