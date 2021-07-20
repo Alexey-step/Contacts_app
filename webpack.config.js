@@ -4,8 +4,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin")
 
-const isDev = process.env.NODE_ENV === 'development'
-const isProd = !isDev
+const isProd = process.env.NODE_ENV === 'production'
 
 const optimization = () => {
   const config = {
